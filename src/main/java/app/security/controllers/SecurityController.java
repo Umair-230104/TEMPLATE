@@ -1,5 +1,14 @@
 package app.security.controllers;
 
+import app.config.HibernateConfig;
+import app.security.daos.ISecurityDAO;
+import app.security.daos.SecurityDAO;
+import app.security.entities.User;
+import app.security.enums.Role;
+import app.security.exceptions.ApiException;
+import app.security.exceptions.NotAuthorizedException;
+import app.security.exceptions.ValidationException;
+import app.security.utils.Utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.nimbusds.jose.JOSEException;
@@ -7,15 +16,7 @@ import com.nimbusds.jose.JOSEException;
 import dk.bugelhartmann.ITokenSecurity;
 import dk.bugelhartmann.TokenSecurity;
 import dk.bugelhartmann.UserDTO;
-import dk.lyngby.config.HibernateConfig;
-import dk.lyngby.security.daos.ISecurityDAO;
-import dk.lyngby.security.daos.SecurityDAO;
-import dk.lyngby.security.entities.User;
-import dk.lyngby.security.enums.Role;
-import dk.lyngby.security.exceptions.ApiException;
-import dk.lyngby.security.exceptions.NotAuthorizedException;
-import dk.lyngby.security.exceptions.ValidationException;
-import dk.lyngby.security.utils.Utils;
+
 import io.javalin.http.Handler;
 import io.javalin.http.HttpStatus;
 import io.javalin.security.RouteRole;

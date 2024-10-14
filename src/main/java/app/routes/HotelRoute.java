@@ -7,6 +7,8 @@ import app.daos.HotelDAO;
 import io.javalin.apibuilder.EndpointGroup;
 import jakarta.persistence.EntityManagerFactory;
 
+import static io.javalin.apibuilder.ApiBuilder.*;
+
 public class HotelRoute
 {
     private final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory("hotel");
@@ -17,12 +19,12 @@ public class HotelRoute
     {
         return () ->
         {
-//            get("/", hotelController::getAllHotels);
-//            get("/{id}", hotelController::getHotelById);
-//            post("/", hotelController::createHotel);
-//            delete("/{id}", hotelController::deleteHotel);
-//            put("/{id}", hotelController::updateHotel);
-//            get("/rooms/{id}", hotelController::roomForSpecificHotel);
+            get("/", hotelController::getAllHotels);
+            get("/{id}", hotelController::getHotelById);
+            post("/", hotelController::createHotel);
+            delete("/{id}", hotelController::deleteHotel);
+            put("/{id}", hotelController::updateHotel);
+            get("/rooms/{id}", hotelController::roomForSpecificHotel);
         };
     }
 
