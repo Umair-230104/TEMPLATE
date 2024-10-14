@@ -30,7 +30,7 @@
         <hikari.version>5.1.0</hikari.version>
 
         <!--  Javalin    -->
-        <javalin.port>7070</javalin.port>
+        <!--<javalin.port>7070</javalin.port>-->
     </properties>
 
     <repositories>
